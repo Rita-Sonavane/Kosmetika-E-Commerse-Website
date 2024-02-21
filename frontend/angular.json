@@ -28,7 +28,8 @@
               "src/styles.css",     
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/lib/owlcarousel/assets/owl.carousel.min.css",
-              "src/assets/css/nav.css"
+              "src/assets/css/nav.css",
+              "node_modules/ngx-toastr/toastr.css"
             
             ],
             "scripts": [
