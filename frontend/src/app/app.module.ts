@@ -16,7 +16,10 @@ import { LoginComponent } from './Components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleComponent } from './Components/partials/title/title.component';
 import { UserService } from './services/user.service';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { SkinCareSearchComponent } from './partials/skin-care-search/skin-care-search.component';
+import { FilterPipe } from './filter.pipe';
+import { SkinCarePdetailComponent } from './skin-care-pdetail/skin-care-pdetail.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import {HttpClientModule} from '@angular/common/http'
     HomeComponent,
     SkinCareComponent,
     LoginComponent,
-    TitleComponent
+    TitleComponent,
+    SkinCareSearchComponent,
+    FilterPipe,
+    SkinCarePdetailComponent
   ],
   imports: [
     BrowserModule,

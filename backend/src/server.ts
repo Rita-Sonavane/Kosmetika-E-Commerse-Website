@@ -1,56 +1,51 @@
+import dotenv from 'dotenv';
+dotenv.config();
+import path from 'path';
 import express from "express";
 import cors from "cors";
-import jwt from "jsonwebtoken"
-import { sample_users } from "./model/skin-care";
 
-const app = express(); 
-//locahost:4200 fron
-//localhost:4000  back 
-// deficult to request to deffrent adddress so we need cors
+import hair_care_Router from './routers/hair_care_Router';
+import userRouter from './routers/user.router';
+import skin_care_product from './routers/skin_care_product.router';
+// import orderRouter from './routers/order.router';
+import { dbConnect } from './configs/database.config';
+dbConnect();
 
-// origin:["http:/localhost:4200"]
-
-app.use(express.json()); //req.body parse in json
-
+const app = express();
+app.use(express.json());
 app.use(cors({
     credentials:true,
-    origin:"*"
-}))
+    origin:["http://localhost:62531"]
+    // origin:"*"
+}));
 
 
-app.post("/api/users/login",(req,res)=>{
-    const {email,password} = req.body;
+//Skin_Care
 
-    console.log("checkkkkkkkk",req.body.email)
-
-    const user = sample_users.find(user => user.email === email 
-        && user.password === password);
-
-        if(user){
-            res.send(generateTokenResponse(user));
-        }
-        else{
-            res.status(400).send("User name or password is not valid!");
-        }
-
-});
-
-const generateTokenResponse = (user:any) => {
-  const token = jwt.sign({
-    email:user.email, 
-    isAdmin: user.isAdmin
-  },"someRandomText",{
-    expiresIn:"30d"
-  });
-
-  user.token = token;
-  return user;
-}
+app.use("/api/skin_care",skin_care_product);
 
 
 
-//port listen
-const port = 4000;
-app.listen(port,() =>{
-    console.log("Website serverd on http://localhost: "+port);
+/////////////////////////////////////////////////////
+
+//Hair_Care
+
+app.use("/api/hair_care",hair_care_Router);
+
+
+//User
+
+app.use("/api/users",userRouter);
+
+// app.use("/api/orders", orderRouter);
+
+
+
+
+//Port 
+
+const port= 4000;
+
+app.listen(port, () => {
+    console.log("Website served on http://localhost:" + port);
 })

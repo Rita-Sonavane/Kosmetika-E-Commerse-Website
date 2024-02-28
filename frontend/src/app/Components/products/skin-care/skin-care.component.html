@@ -17,7 +17,7 @@
                         <a href="" class="btn btn-light py-2 px-3" style="background-color: #000;color: #fff;border: 1px solid #000;">Shop Now</a>
                     </div>
                 </div>
-              
+         
             </div>
             <div class="eraser"></div>
             <div class="buttons-container">
@@ -74,24 +74,23 @@
             <!-- Price End -->
 
 
-
             <!-- skin type -->
             <div class="border-bottom mb-4 pb-4">
                 <h5 class="font-weight-semi-bold mb-4">Skin Type</h5>
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                         <!-- checked -->
-                        <input type="checkbox" class="custom-control-input" checked id="skin-all"   >
+                        <input type="checkbox" class="custom-control-input" checked id="skin-all" (change)="filter('')"  >
                         <label class="custom-control-label" for="skin-all">All skin Types</label>
                         <span class="badges border font-weight-normal">14</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="skin-1">
+                        <input type="checkbox" class="custom-control-input" id="skin-1" (change)="filter('dry')">
                         <label class="custom-control-label" for="skin-1">Dry</label>
                         <span class="badges border font-weight-normal">3</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="skin-2"  >
+                        <input type="checkbox" class="custom-control-input" id="skin-2"  (change)="filter('Sensitive')">
                         <label class="custom-control-label" for="skin-2" >Sensitive</label>
                         <span class="badges border font-weight-normal">4</span>
                     </div>
@@ -99,33 +98,17 @@
             </div>
 
 
-            <!-- skin type -->
-            <!-- <div class="border-bottom mb-4 pb-4">
-                <h5 class="font-weight-semi-bold mb-4">SPF</h5>
-                <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="spf-all" [(ngModel)]="isCheckedAll"  (change)="filter('')"  name="isCheckedAll">
-                        <label class="custom-control-label" for="spf-all">Between 15-30</label>
-                        <span class="badges border font-weight-normal">36</span>
-                    </div>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input"  [(ngModel)]="isChecked" id="spf-1" (change)="filter('below15')"  name="isChecked">
-                        <label class="custom-control-label" for="spf-1">Below 15</label>
-                        <span class="badges border font-weight-normal">6</span>
-                    </div>
-
-                </form>
-            </div> -->
+        
             <div class="border-bottom mb-4 pb-4">
                 <h5 class="font-weight-semi-bold mb-4">SPF</h5>
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" checked id="spf-all"   >
+                        <input type="checkbox" class="custom-control-input" checked id="spf-all"  (change)="filter('')" >
                         <label class="custom-control-label" for="spf-all">Between 15-30</label>
                         <span class="badges border font-weight-normal">14</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input"  id="spf-1" >
+                        <input type="checkbox" class="custom-control-input"  id="spf-1" (change)="filter('below15')" >
                         <label class="custom-control-label" for="spf-1">Below 15</label>
                         <span class="badges border font-weight-normal">6</span>
                     </div>
@@ -140,12 +123,12 @@
                 <h5 class="font-weight-semi-bold mb-4">Conscious</h5>
                 <form>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" checked id="Conscious-all" >
+                        <input type="checkbox" class="custom-control-input" checked id="Conscious-all" (change)="filter('')" >
                         <label class="custom-control-label" for="Conscious-all">Clruelty Free</label>
                         <span class="badges border font-weight-normal">14</span>
                     </div>
                     <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="Conscious-1" >
+                        <input type="checkbox" class="custom-control-input" id="Conscious-1" (change)="filter('vegan')">
                         <label class="custom-control-label" for="Conscious-1">Vegan</label>
                         <span class="badges border font-weight-normal">4</span>
                     </div>
@@ -153,8 +136,7 @@
             </div>
 
 
-            
-        
+         
         </div>
         <!-- Shop Sidebar End -->
 
@@ -162,30 +144,13 @@
         <!-- Shop Product Start -->
         <div class="col-lg-9 col-md-12">
             <div class="row pb-3">
-              <!-- <app-search></app-search> -->
+              <app-skin-care-search></app-skin-care-search>
 
-                <!-- <div class="col-lg-4 col-md-6 col-sm-12 pb-3">
-                    <li class="product">
-                        <a class="img-wrapper" href="#">
-                            <img src="assets/img/Products/p-1.png" alt="Blue running shoe" style="height: 100%;" />
-                        </a>
-
-                        <div class="info pb-5">
-                            <div class="title">Crebeau Placenta
-                                Pearl Refreshing Toner</div>
-                            <div class="price">$34.99</div>
-                        </div>
-
-                        <div class="actions-wrapper">
-                            <a href="#" class="add-btn wishlist">Wishlist</a>
-                            <a href="#" class="add-btn cart">Cart</a>
-                        </div>
-                    </li>
-                </div> -->
+               
                
 
                 <!-- <ng-container *ngFor="let item of products"> -->
-                    <ng-container *ngFor="let item of skin_care_products">
+                    <ng-container *ngFor="let item of filterCategory | filter:searcKey:'name'">
                         <!-- <a ruterLink="product-detail"> -->
                         <div class="col-lg-4 col-md-6 col-sm-12 pb-3">
                        
@@ -198,7 +163,7 @@
                             <div class="price">{{item.price | currency:'INR':'symbol-narrow':'4.2-2'}}</div>
                         </div>
                         <div class="actions-wrapper">
-                            <a  routerLink="."   class="add-btn wishlist"  class="add-btn wishlist">Wishlist</a>
+                            <a  routerLink="."  class="add-btn wishlist">Wishlist</a>
                             <a  routerLink="." class="add-btn cart">Cart</a>
                         </div>
                        
