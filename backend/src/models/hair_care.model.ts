@@ -9,6 +9,11 @@ export interface Hair_Care{
     favorite:boolean;
     stars: number;
     imageUrl: string;
+    brand:string;
+    item_form:string; 
+    item_volume:string;
+    type_Product:string;
+    discription:string;
 }
 
 export const Hair_CareSchema = new Schema<Hair_Care>(
@@ -31,7 +36,27 @@ export const Hair_CareSchema = new Schema<Hair_Care>(
             },
         imageUrl: {type: String, 
             // required:true
-        }
+        },
+        brand: {
+            type: String,
+            // required:true
+        },
+        item_form: {
+            type: String,
+            // required:true
+        },
+        item_volume: {
+            type: String,
+            // required:true
+        },
+        type_Product: {
+            type: String,
+            // required:true
+        },
+        discription: {
+            type: String,
+            // required:true
+        },
         },{
             toJSON:{
                 virtuals: true

@@ -1,8 +1,11 @@
+
+
+
 (function ($) {
     "use strict";
 
 
-
+   
 
     /**Sub Menu */
     $(document).ready(function () {
@@ -329,20 +332,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
+    
 
 
     // Related carousel

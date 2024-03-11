@@ -9,7 +9,7 @@ import { Skin_Care_Product } from 'src/app/shared/models/data-types';
   templateUrl: './skin-care.component.html',
   styleUrls: ['./skin-care.component.css']
 })
-export class SkinCareComponent implements OnInit{
+export class SkinCareComponent {
 
 
   isChecked: boolean = false;
@@ -34,7 +34,7 @@ export class SkinCareComponent implements OnInit{
         productObservable = this.productService.getAll();
         productObservable = this.productService.getAll();
 
-  
+       
       }
 
       this.productService.searchNew.subscribe((val:any)=>{
@@ -46,6 +46,8 @@ export class SkinCareComponent implements OnInit{
         this.products = serveProduct;
         this.productList  = serveProduct;
         this.filterCategory  = serveProduct;
+
+        console.log(this.filterCategory)
       });
 
 
@@ -53,9 +55,7 @@ export class SkinCareComponent implements OnInit{
     })
 
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
 
 
 

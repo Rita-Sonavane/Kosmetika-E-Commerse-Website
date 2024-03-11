@@ -3,6 +3,7 @@
  
  
  (function ($) {
+  
   $.fn.picZoomer = function (options) {
     console.log("Inside pic zoom",this);
      var opts = $.extend({}, $.fn.picZoomer.defaults, options),

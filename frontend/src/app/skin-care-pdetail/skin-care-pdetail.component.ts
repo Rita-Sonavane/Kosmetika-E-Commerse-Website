@@ -21,6 +21,7 @@ export class SkinCarePdetailComponent {
       if(params['id']){
         productService.getProduct(params['id']).subscribe(serveProduct =>{
           this.productdetail = serveProduct;
+          // console.log("productdetail",this.productdetail);
         })
       }
 

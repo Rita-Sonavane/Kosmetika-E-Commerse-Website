@@ -14,12 +14,16 @@ import { ProductService } from './services/product.service';
 import { SkinCareComponent } from './Components/products/skin-care/skin-care.component';
 import { LoginComponent } from './Components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TitleComponent } from './Components/partials/title/title.component';
 import { UserService } from './services/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SkinCareSearchComponent } from './partials/skin-care-search/skin-care-search.component';
 import { FilterPipe } from './filter.pipe';
-import { SkinCarePdetailComponent } from './skin-care-pdetail/skin-care-pdetail.component'
+import { SkinCarePdetailComponent } from './skin-care-pdetail/skin-care-pdetail.component';
+import { HairCareComponent } from './Components/products/hair-care/hair-care.component';
+import { TitleComponent } from './Components/partials/title/title.component';
+import { HairCareSearchComponent } from './partials/hair-care-search/hair-care-search.component';
+import { HairCareDetailComponent } from './Components/hair-care-detail/hair-care-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { SkinCarePdetailComponent } from './skin-care-pdetail/skin-care-pdetail.
     TitleComponent,
     SkinCareSearchComponent,
     FilterPipe,
-    SkinCarePdetailComponent
+    SkinCarePdetailComponent,
+    HairCareComponent,
+    HairCareSearchComponent,
+    HairCareDetailComponent
   ],
   imports: [
     BrowserModule,
